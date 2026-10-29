@@ -1,0 +1,21 @@
+###login (login correcto)
+POST http://localhost:4000/api/auth/login
+
+
+{
+    "email":"ana@correo.com",
+    "password":"123456"
+}
+
+###login(guarda el token)
+POST http://localhost:4000/api/auth/login
+
+
+{
+    "email":"ana@correo.com",
+    "password":"123456"
+}
+
+###perfil con token valido
+GET http://localhost:4000/api/auth/profile
+Authorization: Bearer {{login.response.body.$.token}}
